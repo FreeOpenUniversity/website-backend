@@ -13,7 +13,7 @@
 ### Get started with project
 - If you use IntelliJ, open the folder and the project will be loaded automatically
 ### Set up database
-- Install mysql server (GUI workbench is optional)  
+- Install mysql ***server*** (GUI workbench is optional)  
   remember the root username and password during installing process  
   add the "bin" folder to path  
 - Open cmd(windows) or terminal(mac) with ***admin*** access, run the command below  
