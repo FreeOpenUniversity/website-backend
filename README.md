@@ -3,12 +3,12 @@
 ### Get started with git
 - ***fork*** this repo to your github account
 - ***clone*** your ***own fork*** to your local computer
-- ```git remote add upstream git@github.com:FreeOpenUniversity/website-backend.git```
-- create your ***local branch*** based on ***this develop branch*** (not the main branch)
+- in local git repo, ```git remote add upstream git@github.com:FreeOpenUniversity/website-backend.git```
+- work one ***develop*** (not main) branch or create your ***local branch*** based on ***develop*** branch
 - commit and push to your ***own fork***
 - create pull request against ***this develop branch*** when your fork is ready
-- remember to 'fetch+merge' or 'pull' this branch to ***stay updated***   
-  in your local branch ```git fetch upstream```, ```git merge upstream/develop```
+- ***stay updated***:  
+  in your ***local develop*** branch ```git fetch upstream```, ```git merge upstream/develop```, ```git push```.
 
 ### Get started with project
 - If you use IntelliJ, open the folder and the project will be loaded automatically
