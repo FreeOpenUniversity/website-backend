@@ -11,7 +11,7 @@ public class SubCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "SubCategoryName")
+    @Column(name = "Name")
     private String name;
 
     @ManyToOne
