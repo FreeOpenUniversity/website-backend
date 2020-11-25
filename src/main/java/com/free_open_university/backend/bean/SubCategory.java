@@ -9,9 +9,9 @@ public class SubCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private int subid;
+    private int id;
     // @Column(name = "Name")
-    private String subname;
+    private String name;
     private int catid;
 
     // @Column(name = "SubCategoryId")
@@ -22,10 +22,10 @@ public class SubCategory {
     @JoinColumn(name = "CategoryId", referencedColumnName =  "id")
     private Category category;
 
-    public SubCategory(int subid, String subname, int catid) {
+    public SubCategory(int id, String name, int catid) {
         super();
-        this.subid = subid;
-        this.subname = subname;
+        this.id = id;
+        this.name = name;
         this.catid = catid;
     }
 
@@ -33,20 +33,20 @@ public class SubCategory {
         super();
     }
 
-    public int getSubid( ) {
-        return subid;
+    public int getId( ) {
+        return id;
     }
 
-    public void setSubid(int subid) {
-        this.subid = subid;
+    public void setId(int id) {
+        this.id = id;
     }   
 
     public String getSubname( ) {
-        return subname;
+        return name;
     }
 
-    public void setSubname(String subname) {
-        this.subname = subname;
+    public void setSubname(String name) {
+        this.name = name;
     }
 
     public int getCatid( ) {
