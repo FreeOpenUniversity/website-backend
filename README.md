@@ -1,3 +1,4 @@
+
 ## Welcome Developers
 
 ### Get started with git
@@ -27,7 +28,4 @@
   log in with the user just created  
   ```mysql -u freeopenuniversity```  
   now you can create database, tables and data entries  
-  
-# This is the branch for deployment
-- Please ***DO NOT*** fork/clone/make changes to this branch
-- Use the ***develop*** branch instead
+ 
