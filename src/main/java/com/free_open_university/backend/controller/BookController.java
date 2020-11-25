@@ -15,13 +15,13 @@ public class BookController {
     @Autowired
     BookService bookService;
 
-    @GetMapping()
+/*    @GetMapping // todo: need another path
     public Book getBookByTitle(@RequestParam(value = "title") String title) {
         return bookService.getBookByTitle(title).get();
-    }
+    }*/
 
-    // GET localhost:8080/book?sub_category='sometitle'&level='100'
-    // GET localhost:8080/book?level='100'
+    // GET localhost:8080/book?sub_category=4&level=8
+    // GET localhost:8080/book?level=6
     @GetMapping
     public List<Book> getBookList(
             @RequestParam (value = "sub_category", required = false) Integer subCategoryId,
@@ -40,6 +40,18 @@ public class BookController {
     @PostMapping
     public Response addBook(@RequestBody  Book newBook) {
         return bookService.addBook(newBook);
+    }
+
+    @PostMapping("/batch_upload")
+    public Response addBookBatch(@RequestBody List<Book> books) {
+        Response response = new Response();
+        for (Book book : books) {
+            response = bookService.addBook(book);
+            if(!response.isSuccess()) {
+                return response;
+            }
+        }
+        return new Response(true,200,"books added");
     }
 
 }

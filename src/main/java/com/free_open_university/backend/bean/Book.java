@@ -19,11 +19,11 @@ public class Book {
     @Column(name = "author")
     private String author;
     @Column(name = "course_level")
-    private String level;
+    private int level;
     @Column(name = "link")
     private String link;
     @Column(name = "category_id")
-    private List<Integer> categoryId;
+    private int categoryId;
     @Column(name = "subcategory_id")
     private int subCategoryId;
 
@@ -51,13 +51,9 @@ public class Book {
         this.author = author;
     }
 
-    public String getLevel() {
-        return level;
-    }
+    public int getLevel() { return level; }
 
-    public void setLevel(String level) {
-        this.level = level;
-    }
+    public void setLevel(int level) { this.level = level; }
 
     public String getLink() {
         return link;
@@ -67,13 +63,9 @@ public class Book {
         this.link = link;
     }
 
-    public List<Integer> getCategoryId() {
-        return categoryId;
-    }
+    public int getCategoryId() { return categoryId; }
 
-    public void setCategoryId(List<Integer> categoryId) {
-        this.categoryId = categoryId;
-    }
+    public void setCategoryId(int categoryId) { this.categoryId = categoryId; }
 
     public int getSubCategoryId() {
         return subCategoryId;
