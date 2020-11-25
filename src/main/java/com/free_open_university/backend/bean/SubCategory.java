@@ -22,7 +22,7 @@ public class SubCategory {
     @JoinColumn(name = "CategoryId", referencedColumnName =  "id")
     private Category category;
 
-    // public SubCategory(int id, String name, int catid) {
+    public SubCategory(int id, String name, int catid) {
         super();
         this.id = id;
         this.name = name;
@@ -51,11 +51,11 @@ public class SubCategory {
 
     // public int getCatid( ) {
         // return catid;
-    }
+    // }
 
     // public void setCatid(int catid) {
         // // this.catid = catid;
-    }
+    // }
 
     public Category getCategory() {
         return category;
