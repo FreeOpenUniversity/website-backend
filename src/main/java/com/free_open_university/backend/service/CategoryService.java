@@ -13,6 +13,8 @@ public class CategoryService {
     @Autowired
     CategoryDao categoryDao;
 
-    public List<Category> getAllCategories() { return categoryDao.findAll();}
+    public List<Category> getAllCategories() {
+        return categoryDao.findAll();
+    }
 
 }

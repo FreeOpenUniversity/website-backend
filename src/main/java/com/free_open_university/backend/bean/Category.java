@@ -2,9 +2,10 @@ package com.free_open_university.backend.bean;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "Category")
+@Table(name = "category")
 public class Category {
 
     @Id
@@ -14,16 +15,12 @@ public class Category {
     @Column(name = "name")
     private String name;
 
-   /* @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private List<SubCategory> subCategoryList;*/
+    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<SubCategory> subCategoryList;
 
-  /*  public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
-    public void setId(int id) {
-        this.id = id;
-    }*/
+    public void setId(int id) { this.id = id;}
 
     public String getName() {
         return name;
@@ -33,11 +30,11 @@ public class Category {
         this.name = name;
     }
 
-  /*  public List<SubCategory> getSubCategoryList() {
+    public Set<SubCategory> getSubCategoryList() {
         return subCategoryList;
     }
 
-    public void setSubCategoryList(List<SubCategory> subCategoryList) {
+    public void setSubCategoryList(Set<SubCategory> subCategoryList) {
         this.subCategoryList = subCategoryList;
-    }*/
+    }
 }
