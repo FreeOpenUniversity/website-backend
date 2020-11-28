@@ -4,11 +4,12 @@
 - ***fork*** this repo to your github account
 - ***clone*** your ***own fork*** to your local computer
 - in local git repo, ```git remote add upstream git@github.com:FreeOpenUniversity/website-backend.git```
-- work one ***develop*** (not main) branch or create your ***local branch*** based on ***develop*** branch
+- create your ***local branch*** ***based on*** "base-on-this" branch
 - commit and push to your ***own fork***
-- create pull request against ***this develop branch*** when your fork is ready
-- ***stay updated***:  
-  in your ***local develop*** branch ```git fetch upstream```, ```git merge upstream/develop```, ```git push```.
+- create pull request against ***this "base-on-this" branch*** when your branch is ready
+- ***stay in sync***: before word and push
+  in your local "base-on-it" branch ```git pull upstream```.
+  in your local "feature" branch ```git rebase```
 
 ### Get started with project
 - If you use IntelliJ, open the folder and the project will be loaded automatically
