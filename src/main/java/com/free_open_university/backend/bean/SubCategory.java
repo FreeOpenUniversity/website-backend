@@ -5,18 +5,18 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "subcategory")
+@Table(name = "Subcategory")
 public class SubCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "Name")
+    @Column(name = "name")
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "Category_Id", referencedColumnName = "Id")
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
     @JsonIgnore
     private Category category;
 
