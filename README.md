@@ -8,8 +8,8 @@
 - commit and push to your ***own fork***
 - create pull request against ***this "base-on-this" branch*** when your branch is ready
 - ***stay in sync***: before word and push
-  in your local "base-on-it" branch ```git pull upstream```.
-  in your local "feature" branch ```git rebase```
+  in your local "base-on-it" branch ```git pull upstream base-on-this```.
+  in your local "feature" branch ```git rebase base-on-this```
 
 ### Get started with project
 - If you use IntelliJ, open the folder and the project will be loaded automatically
