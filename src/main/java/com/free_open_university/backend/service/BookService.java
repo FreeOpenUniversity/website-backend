@@ -28,8 +28,8 @@ public class BookService {
         return bookDao.findBySubCategoryId(subCategoryId);
     }
 
-    public List<Book>  getBooksByLevelAndSubCategoryId(int level, int subCategorId) {
-        return bookDao.findByLevelAndSubCategoryId(level, subCategorId);
+    public List<Book>  getBooksByLevelAndSubCategoryId(int level, int subCategoryId) {
+        return bookDao.findByLevelAndSubCategoryId(level, subCategoryId);
     }
 
     public Optional<Book> getBookByTitle(String title) {

@@ -22,12 +22,12 @@ CREATE TABLE IF NOT EXISTS BookLibrary (
 	author VARCHAR(255),
 	course_level INT,
 	link VARCHAR(600),
-	category_id INT,
 	subcategory_id INT,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	FOREIGN KEY (subcategory_id) REFERENCES SubCategory(id)
 );
 
 INSERT INTO  Category (name)
 VALUES ('cat1'), ('cat2');
-INSERT INTO Subcategory (name, category_id)
+INSERT INTO SubCategory (name, category_id)
 VALUES  ('sub1', 1), ('sub2', 2), ('sub3', 1), ('sub4', 1), ('sub5', 2);

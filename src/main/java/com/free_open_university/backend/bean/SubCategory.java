@@ -2,10 +2,12 @@ package com.free_open_university.backend.bean;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Subcategory")
+@Table(name = "SubCategory")
 public class SubCategory {
 
     @Id
@@ -19,6 +21,10 @@ public class SubCategory {
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     @JsonIgnore
     private Category category;
+
+    @OneToMany(mappedBy = "subCategory", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Book> bookList; 
+    
 
     public int getId() {
         return id;
@@ -42,6 +48,14 @@ public class SubCategory {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public Set<Book> getbookList() {
+        return bookList;
+    }
+
+    public void getbookList(Set<Book> bookList) {
+        this.bookList = bookList;
     }
 }
 
