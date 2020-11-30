@@ -29,5 +29,5 @@ CREATE TABLE IF NOT EXISTS BookLibrary (
 
 INSERT INTO  Category (name)
 VALUES ('cat1'), ('cat2');
-INSERT INTO Subcategory (name, category_id)
+INSERT INTO SubCategory (name, category_id)
 VALUES  ('sub1', 1), ('sub2', 2), ('sub3', 1), ('sub4', 1), ('sub5', 2);
