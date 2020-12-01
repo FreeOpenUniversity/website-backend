@@ -22,7 +22,7 @@ public class SubCategory {
     @JsonIgnore
     private Category category;
 
-    @OneToMany(mappedBy = "subCategory", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "SubCategory", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Book> bookList; 
     
 
