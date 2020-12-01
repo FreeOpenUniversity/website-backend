@@ -22,8 +22,8 @@ public class SubCategory {
     @JsonIgnore
     private Category category;
 
-    @OneToMany(mappedBy = "SubCategory", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Book> bookList; 
+    // @OneToMany(mappedBy = "SubCategory", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    // private Set<Book> bookList; 
     
 
     public int getId() {
@@ -50,12 +50,12 @@ public class SubCategory {
         this.category = category;
     }
 
-    public Set<Book> getbookList() {
-        return bookList;
-    }
+    // public Set<Book> getbookList() {
+    //     return bookList;
+    // }
 
-    public void getbookList(Set<Book> bookList) {
-        this.bookList = bookList;
-    }
+    // public void getbookList(Set<Book> bookList) {
+    //     this.bookList = bookList;
+    // }
 }
 
