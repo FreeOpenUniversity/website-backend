@@ -83,7 +83,7 @@ public class Book {
 
     // public void setSubCategoryId(int subCategoryId) {
     //     this.subCategoryId = subCategoryId;
-    }
+    // }
 
     public SubCategory getSubCategory() {
         return subCategory;

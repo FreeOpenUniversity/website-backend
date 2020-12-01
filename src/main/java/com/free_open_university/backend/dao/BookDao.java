@@ -14,10 +14,10 @@ public interface BookDao extends JpaRepository<Book, Integer> {
 
     List<Book> findByLevel(int level);
 
-    List<Book> findBySubCategoryId(int subCategoryId);
+    // List<Book> findBySubCategoryId(int subCategoryId);
 
-    @Query("select b from Book b  where b.level = :level and b.subCategoryId = :subCategoryId")
-    List<Book> findByLevelAndSubCategoryId(
-            @Param("level") int level,
-            @Param("subCategoryId") int subCategoryId);
+    // @Query("select b from Book b  where b.level = :level and b.subCategoryId = :subCategoryId")
+    // List<Book> findByLevelAndSubCategoryId(
+    //         @Param("level") int level,
+    //         @Param("subCategoryId") int subCategoryId);
 }
