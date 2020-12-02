@@ -1,8 +1,8 @@
 package com.free_open_university.backend.service;
 
 import com.free_open_university.backend.bean.Book;
-import com.free_open_university.backend.dao.BookDao;
 import com.free_open_university.backend.http.Response;
+import com.free_open_university.backend.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +14,7 @@ import java.util.Optional;
 public class BookService {
 
     @Autowired
-    BookDao bookDao;
+    BookRepository bookDao;
 
     public List<Book> getAllBooks() {
         return bookDao.findAll();
