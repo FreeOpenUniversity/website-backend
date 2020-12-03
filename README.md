@@ -28,4 +28,6 @@
   log in with the user just created  
   ```mysql -u freeopenuniversity```  
   now you can create database, tables and data entries  
+- run the init_script in database folder to create tables and data
+  ```source <your path to the script>```
   
