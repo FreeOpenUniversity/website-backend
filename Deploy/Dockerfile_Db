@@ -1,0 +1,4 @@
+FROM mysql:5.7
+# add a database
+EXPOSE 3306
+COPY ./init_script.sql /docker-entrypoint-initdb.d/

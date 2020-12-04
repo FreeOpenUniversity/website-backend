@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  openfree-sql:
+    build:
+      context: ../database
+      dockerfile: ../Deploy/Dockerfile_Db
+    container_name: openfree-sql
+    environment:
+      MYSQL_DATABASE: "test"
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+    expose:
+      - "3306"
+    ports:
+      - 3306:3306
+    healthcheck:
+      test: '/usr/bin/mysql --user=root --password=root --execute "SHOW DATABASES;"'
+      interval: 2s
+      timeout: 20s
+      retries: 10
+
+  openfree-service:
+    build:
+      context: ../
+      dockerfile: ./Deploy/Dockerfile
+    container_name: openfree-service
+    depends_on:
+      - openfree-sql
+    ports:
+      - 8080:8080
+    restart: on-failure
+    #command: ["./entrypoint.sh", "openfree-sql:3306", "--", "java", "-jar", "app/app.jar"]
+    command: ["./entrypoint.sh", "openfree-sql:3306", "--", "java", "org.springframework.boot.loader.JarLauncher"]
+    environment:
+      DATABASE_URL: jdbc:mysql://openfree-sql:3306/test
+      DATABASE_USER: root
+      DATABASE_PASSWORD: root
