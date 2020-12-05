@@ -13,7 +13,8 @@
 
 ### Get started with project
 - If you use IntelliJ, open the folder and the project will be loaded automatically
-### Set up database
+- If you use command line, in project root, run ```./mvnw spring-boot:run``` or ```mvnw spring-boot:run``` in Windows
+ ### Set up database
 - Install mysql server (GUI workbench is optional)  
   remember the root username and password during installing process  
   add the "bin" folder to path  
