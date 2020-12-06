@@ -24,17 +24,27 @@ public class BookController {
     // GET localhost:8080/book?level=6
     @GetMapping
     public List<Book> getBookList(
-            @RequestParam (value = "sub_category", required = false) Integer subCategoryId,
+            @RequestParam (value = "category", required = false) Integer CategoryId,
             @RequestParam (value = "level", required = false) Integer level) {
-        if(subCategoryId != null && level != null){
-            return bookService.getBooksByLevelAndSubCategoryId(level, subCategoryId);
-        } else if (subCategoryId == null && level != null) {
+        if(CategoryId != null && level != null){
+            return bookService.getBooksByLevelAndCategoryId(level, CategoryId);
+        } else if (CategoryId == null && level != null) {
             return bookService.getBooksByLevel(level);
-        } else if (subCategoryId != null && level == null) {
-            return bookService.getBooksBySubCategoryId(subCategoryId);
+        } else if (CategoryId != null && level == null) {
+            return bookService.getBooksByCategoryId(CategoryId);
         } else {
             return bookService.getAllBooks();
         }
+        
+                // if(subCategoryId != null && level != null){
+        //     return bookService.getBooksByLevelAndSubCategoryId(level, subCategoryId);
+        // } else if (subCategoryId == null && level != null) {
+        //     return bookService.getBooksByLevel(level);
+        // } else if (subCategoryId != null && level == null) {
+        //     return bookService.getBooksBySubCategoryId(subCategoryId);
+        // } else {
+        //     return bookService.getAllBooks();
+        // }
     }
 
     @PostMapping
