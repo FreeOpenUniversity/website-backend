@@ -4,16 +4,17 @@
 - ***fork*** this repo to your github account
 - ***clone*** your ***own fork*** to your local computer
 - in local git repo, ```git remote add upstream git@github.com:FreeOpenUniversity/website-backend.git```
-- create your ***local branch*** ***based on*** "base-on-this" branch
+- create your local "feature" branch ***based on*** "develop" branch
 - commit and push to your ***own fork***
-- create pull request against ***this "base-on-this" branch*** when your branch is ready
+- create pull request against ***this "develop" branch*** when your branch is ready
 - ***stay in sync***: before word and push
-  in your local "base-on-it" branch ```git pull upstream```.
-  in your local "feature" branch ```git rebase```
+  in your local "develop" branch ```git pull upstream develop```.
+  in your local "feature" branch ```git rebase develop```
 
 ### Get started with project
 - If you use IntelliJ, open the folder and the project will be loaded automatically
-### Set up database
+- If you use command line, in project root, run ```./mvnw spring-boot:run``` OR in windows, run ```mvnw spring-boot:run```
+ ### Set up database
 - Install mysql server (GUI workbench is optional)  
   remember the root username and password during installing process  
   add the "bin" folder to path  
@@ -28,4 +29,6 @@
   log in with the user just created  
   ```mysql -u freeopenuniversity```  
   now you can create database, tables and data entries  
+- run the init_script in database folder to create tables and data
+  ```source <your path to the script>```
   
