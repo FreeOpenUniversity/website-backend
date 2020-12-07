@@ -14,7 +14,8 @@ public class SubCategory {
 
     @Column(name = "name")
     private String name;
-
+    @Column(name = "image_id")
+    private long imageId;
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     @JsonIgnore
@@ -42,6 +43,14 @@ public class SubCategory {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public long getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(long imageId) {
+        this.imageId = imageId;
     }
 }
 

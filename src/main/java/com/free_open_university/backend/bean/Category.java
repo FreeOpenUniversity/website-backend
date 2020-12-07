@@ -14,7 +14,8 @@ public class Category {
 
     @Column(name = "name")
     private String name;
-
+    @Column(name = "image_id")
+    private long imageId;
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<SubCategory> subCategoryList;
 
@@ -36,5 +37,13 @@ public class Category {
 
     public void setSubCategoryList(Set<SubCategory> subCategoryList) {
         this.subCategoryList = subCategoryList;
+    }
+
+    public long getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(long imageId) {
+        this.imageId = imageId;
     }
 }

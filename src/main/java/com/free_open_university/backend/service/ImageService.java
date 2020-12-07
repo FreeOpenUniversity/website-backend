@@ -7,18 +7,17 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ImageService {
-
     @Autowired
     private ImageRepository imageRepository;
 
     public long save(Image image)
     {
-        return  1;  // return id of the image
+        Image savedImageWithId = imageRepository.saveAndFlush(image);
+        return  savedImageWithId.getId();  // return id of the image
     }
 
     public Image get(Long id)
     {
         return imageRepository.getOne(id);
     }
-
 }
