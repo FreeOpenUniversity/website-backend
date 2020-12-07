@@ -16,8 +16,8 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 
     List<Book> findByCategoryId(int CategoryId);
 
-    @Query("select b from Book b  where b.level = :level and b.Category.id = :CategoryId")
+    @Query("select b from Book b where b.level = :level and b.Category.id = :CategoryId")
      List<Book> findByLevelAndCategoryId(
-            @Param("level") int level),
+            @Param("level") int level,
             @Param("CategoryId") int CategoryId);
 }

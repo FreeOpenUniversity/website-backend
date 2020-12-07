@@ -24,12 +24,12 @@ public class BookService {
         return bookDao.findByLevel(level);
     }
 
-    public List<Book> getBooksByCategoryId(int subCategoryId) {
-        return bookDao.findByCategoryId(subCategoryId);
+    public List<Book> getBooksByCategoryId(int CategoryId) {
+        return bookDao.findByCategoryId(CategoryId);
     }
 
-    public List<Book>  getBooksByLevelAndCategoryId(int level, int subCategoryId) {
-        return bookDao.findByLevelAndCategoryId(level, subCategoryId);
+    public List<Book>  getBooksByLevelAndCategoryId(int level, int CategoryId) {
+        return bookDao.findByLevelAndCategoryId(level, CategoryId);
     }
 
     public Optional<Book> getBookByTitle(String title) {

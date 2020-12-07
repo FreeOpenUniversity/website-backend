@@ -27,14 +27,14 @@ CREATE TABLE IF NOT EXISTS BookLibrary (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS BookCategory (
-	book_id INT,
-	category_id INT,
-	PRIMARY KEY (book_id)
-	PRIMARY KEY (category_id)
-	FOREIGN KEY (book_id) REFERENCES BookLibrary(id)
-	FOREIGN KEY (category_id) REFERENCES Category(id)
-);
+-- CREATE TABLE IF NOT EXISTS BookCategory (
+-- 	book_id INT,
+-- 	category_id INT,
+-- 	PRIMARY KEY (book_id)
+-- 	PRIMARY KEY (category_id)
+-- 	FOREIGN KEY (book_id) REFERENCES BookLibrary(id)
+-- 	FOREIGN KEY (category_id) REFERENCES Category(id)
+-- );
 
 INSERT INTO  User (name, email, password, intro)
 VALUES ('Tom', 'tom@gmail.com', 'password1', 'profile info1'), ('Jerry', 'jerry@gmail.com', 'password2', 'profile info2');

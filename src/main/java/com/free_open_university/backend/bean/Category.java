@@ -26,7 +26,7 @@ public class Category {
     @JsonIgnore
     
     // private Book bookList;
-    Set<Book> bookList;
+    List<Book> bookList;
 
     public int getId() { 
         return id; 
@@ -44,11 +44,11 @@ public class Category {
         this.name = name;
     }
 
-    public Set<Book> bookList() {
+    public List<Book> bookList() {
         return bookList;
     }
 
-    public void setSubCategoryList(Set<Book> bookList) {
+    public void setSubCategoryList(List<Book> bookList) {
         this.bookList = bookList;
     }
 }
