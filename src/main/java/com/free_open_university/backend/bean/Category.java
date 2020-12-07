@@ -1,12 +1,15 @@
 package com.free_open_university.backend.bean;
 
+import lombok.*;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.List;
 import java.util.Set;
+import java.util.HashSet; 
 
+@Data
 @Entity
 @Table(name = "Category")
 public class Category {
@@ -22,11 +25,11 @@ public class Category {
     // @ManyToMany(mappedBy = "category", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     // @JoinColumn(name = "book_id", referencedColumnName = "id")
 
-    @ManyToMany(mappedBy = "bookcategory")
-    @JsonIgnore
+    @ManyToMany(mappedBy = "categories")
+    // @JsonIgnore
     
     // private Book bookList;
-    List<Book> bookList;
+    private Set<Book> books = new HashSet<>();
 
     public int getId() { 
         return id; 
@@ -44,11 +47,15 @@ public class Category {
         this.name = name;
     }
 
-    public List<Book> bookList() {
-        return bookList;
+    public Set<Book> bookList() {
+        return books;
     }
 
-    public void setSubCategoryList(List<Book> bookList) {
-        this.bookList = bookList;
+    // public void setSubCategoryList(Set<Book> books) {
+    //     this.books = books;
+    // }
+
+    public Category(String name) {
+        this.name = name;
     }
 }

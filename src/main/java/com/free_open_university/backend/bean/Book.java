@@ -3,8 +3,7 @@ package com.free_open_university.backend.bean;
 // import javax.annotation.sql.DataSourceDefinition;
 import javax.persistence.*;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 import java.util.Set;
 import java.util.stream.Collector;
@@ -18,7 +17,7 @@ import java.util.stream.Stream;
 @EqualsAndHashCode(exclude = "categories")
 
 @Entity
-@Table(name = "BookLibrary")
+@Table(name = "Book")
 public class Book {
 
     @Id
@@ -87,17 +86,18 @@ public class Book {
         this.link = link;
     }
 
-    // public Set<Category> getCategoryId() { 
-    //     return categories; 
-    // }
+    public Set<Category> getCategoryId() { 
+        return categories; 
+    }
 
-    // public void setCategoryId(Set<Category> categories) { 
-    //     this.categories = categories
+    public void setCategoryId(Set<Category> categories) { 
+        this.categories = categories;
+    }
     
-    public Book(String name, Publisher... publishers) {
-        this.name = name;
-        this.publishers = Stream.of(publishers).collect(Collectors.toSet());
-        this.publishers.forEach(x -> x.getBooks().add(this));
+    public Book(String title, Category... categories) {
+        this.title = title;
+        this.categories = Stream.of(categories).collect(Collectors.toSet());
+        this.categories.forEach(x -> x.getBooks().add(this));
     }
    
 }

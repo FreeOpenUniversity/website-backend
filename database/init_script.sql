@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS Category (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS BookLibrary (
+CREATE TABLE IF NOT EXISTS Book (
 	id INT NOT Null AUTO_INCREMENT,
 	title VARCHAR(255),
 	author VARCHAR(255),
@@ -27,17 +27,21 @@ CREATE TABLE IF NOT EXISTS BookLibrary (
 	PRIMARY KEY (id)
 );
 
--- CREATE TABLE IF NOT EXISTS BookCategory (
--- 	book_id INT,
--- 	category_id INT,
--- 	PRIMARY KEY pk_BookCategory (book_id, category_id)
--- );
+CREATE TABLE IF NOT EXISTS BookCategory (
+	book_id INT NOT NULL,
+	category_id INT NOT NULL,
+	PRIMARY KEY (book_id, category_id),
+	KEY fk_book (book_id),
+	KEY fk_category (category_id),
+	CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES Book (book_id),
+	CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES Category (category_id)
+);
 
-INSERT INTO  User (name, email, password, intro)
+INSERT INTO User (name, email, password, intro)
 VALUES ('Tom', 'tom@gmail.com', 'password1', 'profile info1'), ('Jerry', 'jerry@gmail.com', 'password2', 'profile info2');
-INSERT INTO  Category (name, book_id)
+INSERT INTO Category (name, book_id)
 VALUES ('Math', 001), ('Science', 002);
-INSERT INTO  BookLibrary (title, author, course_level, link, category_id)
+INSERT INTO Book (title, author, course_level, link, category_id)
 VALUES ('Calculus I', 'author1', 01, 'link1', 001), ('Physics', 'author2', 02, 'link2', 002); 
 
 
