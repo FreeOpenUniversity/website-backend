@@ -1,22 +1,26 @@
 package com.free_open_university.backend.bean;
 
-import javax.annotation.sql.DataSourceDefinition;
+// import javax.annotation.sql.DataSourceDefinition;
 import javax.persistence.*;
-import java.util.List;  
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;  
+import java.util.stream.Stream;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+// import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
+@Data
+@EqualsAndHashCode(exclude = "categories")
 
 @Entity
 @Table(name = "BookLibrary")
 public class Book {
 
-   /* @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -29,17 +33,17 @@ public class Book {
     private int level;
     @Column(name = "link")
     private String link;
-    @Column(name = "category_id")
-    private int categoryList;
+    // @Column(name = "category_id")
+    // private int categoryList;
 
     // @ManyToMany(mappedBy = "book", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "BookCategory",
-        joinColumns = @JoinColumn(name= "book_id"), //referencedColumnName = "id"
-        inverseJoinColumns = @JoinColumn(name = "category_id")) // referencedColumnName = "id"
+        joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"))
     // @JsonIgnore
 
-    List<Category> bookcategory;
+    private Set<Category> categories;
     
     // private Category categoryList;
 
@@ -83,12 +87,17 @@ public class Book {
         this.link = link;
     }
 
-    public List<Category> getCategoryId() { 
-        return bookcategory; 
-    }
+    // public Set<Category> getCategoryId() { 
+    //     return categories; 
+    // }
 
-    public void setCategoryId(List<Category> categoryList) { 
-        this.bookcategory = categoryList; 
+    // public void setCategoryId(Set<Category> categories) { 
+    //     this.categories = categories
+    
+    public Book(String name, Publisher... publishers) {
+        this.name = name;
+        this.publishers = Stream.of(publishers).collect(Collectors.toSet());
+        this.publishers.forEach(x -> x.getBooks().add(this));
     }
    
 }

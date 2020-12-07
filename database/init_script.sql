@@ -30,10 +30,7 @@ CREATE TABLE IF NOT EXISTS BookLibrary (
 -- CREATE TABLE IF NOT EXISTS BookCategory (
 -- 	book_id INT,
 -- 	category_id INT,
--- 	PRIMARY KEY (book_id)
--- 	PRIMARY KEY (category_id)
--- 	FOREIGN KEY (book_id) REFERENCES BookLibrary(id)
--- 	FOREIGN KEY (category_id) REFERENCES Category(id)
+-- 	PRIMARY KEY pk_BookCategory (book_id, category_id)
 -- );
 
 INSERT INTO  User (name, email, password, intro)
@@ -47,7 +44,14 @@ VALUES ('Calculus I', 'author1', 01, 'link1', 001), ('Physics', 'author2', 02, '
 -- INSERT INTO SubCategory (name, category_id)
 -- VALUES  ('sub1', 1), ('sub2', 2), ('sub3', 1), ('sub4', 1), ('sub5', 2);
 
-
+-- CREATE TABLE IF NOT EXISTS BookCategory (
+-- 	book_id INT,
+-- 	category_id INT,
+-- 	PRIMARY KEY (book_id)
+-- 	PRIMARY KEY (category_id)
+-- 	FOREIGN KEY (book_id) REFERENCES BookLibrary(id)
+-- 	FOREIGN KEY (category_id) REFERENCES Category(id)
+-- );
 
 
 -- CREATE TABLE IF NOT EXISTS BookLibrary (
