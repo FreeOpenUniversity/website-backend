@@ -1,6 +1,15 @@
 CREATE DATABASE IF NOT EXISTS test;
 USE test;
 
+CREATE TABLE IF NOT EXISTS User (
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT Null,
+	password VARCHAR(50) NOT Null,
+	intro VARCHAR(1023),
+	PRIMARY KEY (id)
+);
+
 CREATE TABLE IF NOT EXISTS Category (
 	id INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(255) NOT NULL,
@@ -27,6 +36,8 @@ CREATE TABLE IF NOT EXISTS BookLibrary (
 	PRIMARY KEY (id)
 );
 
+INSERT INTO  User (name, email, password, intro)
+VALUES ('Tom', 'tom@gmail.com', 'password1', 'profile info1'), ('Jerry', 'jerry@gmail.com', 'password2', 'profile info2');
 INSERT INTO  Category (name)
 VALUES ('cat1'), ('cat2');
 INSERT INTO SubCategory (name, category_id)
