@@ -33,8 +33,8 @@ CREATE TABLE IF NOT EXISTS BookCategory (
 	PRIMARY KEY (book_id, category_id),
 	KEY fk_book (book_id),
 	KEY fk_category (category_id),
-	CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES Book (book_id),
-	CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES Category (category_id)
+	CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES Book (id),
+	CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES Category (id)
 );
 
 INSERT INTO User (name, email, password, intro)
@@ -42,7 +42,7 @@ VALUES ('Tom', 'tom@gmail.com', 'password1', 'profile info1'), ('Jerry', 'jerry@
 INSERT INTO Category (name, book_id)
 VALUES ('Math', 001), ('Science', 002);
 INSERT INTO Book (title, author, course_level, link, category_id)
-VALUES ('Calculus I', 'author1', 01, 'link1', 001), ('Physics', 'author2', 02, 'link2', 002); 
+VALUES ('Calculus I', 'author1', 01, 'link1', 20), ('Physics', 'author2', 02, 'link2', 21); 
 
 
 -- INSERT INTO SubCategory (name, category_id)

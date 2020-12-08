@@ -7,9 +7,9 @@ import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;  
-import java.util.stream.Stream;
+// import java.util.stream.Collector;
+// import java.util.stream.Collectors;  
+// import java.util.stream.Stream;
 
 
 // import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -46,9 +46,9 @@ public class Book {
     
     // @JsonIgnore
 
-    @ManyToMany(mappedBy = "book")
-
     private Set<Category> categories = new HashSet<Category>();
+    
+    @ManyToMany(mappedBy = "books")
     
     // private Category categoryList;
 

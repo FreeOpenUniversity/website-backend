@@ -3,7 +3,7 @@ package com.free_open_university.backend.bean;
 // import lombok.*;
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+// import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Set;
 import java.util.HashSet; 
@@ -28,6 +28,9 @@ public class Category {
     // @JsonIgnore
     
     // private Book bookList;
+
+
+    private Set<Book> books = new HashSet<Book>();
     
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable (
@@ -36,9 +39,6 @@ public class Category {
         inverseJoinColumns = @JoinColumn(name = "book_id")
         )
         
-
-    private Set<Book> books = new HashSet<Book>();
-
     public int getId() { 
         return id; 
     }
@@ -55,10 +55,13 @@ public class Category {
         this.name = name;
     }
 
-    public Set<Book> bookList() {
+    public Set<Book> getBook() {
         return books;
     }
 
+    public void setBook(Set<Book> books) {
+        this.books = books;
+    }
     // public void setSubCategoryList(Set<Book> books) {
     //     this.books = books;
     // }

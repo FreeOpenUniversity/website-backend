@@ -1,8 +1,8 @@
 package com.free_open_university.backend.bean;
 
 import javax.persistence.*;
-import java.util.List;
-import java.util.Set;
+// import java.util.List;
+// import java.util.Set;
 
 @Entity
 @Table(name = "User")
