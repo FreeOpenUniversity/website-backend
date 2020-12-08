@@ -1,15 +1,14 @@
 package com.free_open_university.backend.bean;
 
-import lombok.*;
+// import lombok.*;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import java.util.List;
 import java.util.Set;
 import java.util.HashSet; 
 
-@Data
+// @Data
 @Entity
 @Table(name = "Category")
 public class Category {
@@ -18,18 +17,27 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "category_id")
     private String name;
 
     
     // @ManyToMany(mappedBy = "category", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     // @JoinColumn(name = "book_id", referencedColumnName = "id")
-
-    @ManyToMany(mappedBy = "categories")
+    
+    // @ManyToMany(mappedBy = "categories")
     // @JsonIgnore
     
     // private Book bookList;
-    private Set<Book> books = new HashSet<>();
+    
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable (
+        name = "BookCategory",
+        joinColumns = @JoinColumn(name = "category_id"),
+        inverseJoinColumns = @JoinColumn(name = "book_id")
+        )
+        
+
+    private Set<Book> books = new HashSet<Book>();
 
     public int getId() { 
         return id; 

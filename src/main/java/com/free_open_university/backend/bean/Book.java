@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 import lombok.*;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;  
@@ -22,6 +23,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "book_id")
     private int id;
 
     @Column(name = "title")
@@ -32,17 +34,21 @@ public class Book {
     private int level;
     @Column(name = "link")
     private String link;
+
     // @Column(name = "category_id")
     // private int categoryList;
 
     // @ManyToMany(mappedBy = "book", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "BookCategory",
-        joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
-        inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"))
+    // @ManyToMany(cascade = CascadeType.ALL)
+    // @JoinTable(name = "BookCategory",
+    //     joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
+    //     inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"))
+    
     // @JsonIgnore
 
-    private Set<Category> categories;
+    @ManyToMany(mappedBy = "book")
+
+    private Set<Category> categories = new HashSet<Category>();
     
     // private Category categoryList;
 
@@ -94,11 +100,11 @@ public class Book {
         this.categories = categories;
     }
     
-    public Book(String title, Category... categories) {
-        this.title = title;
-        this.categories = Stream.of(categories).collect(Collectors.toSet());
-        this.categories.forEach(x -> x.getBooks().add(this));
-    }
+    // public Book(String title, Category... categories) {
+    //     this.title = title;
+    //     this.categories = Stream.of(categories).collect(Collectors.toSet());
+    //     this.categories.forEach(x -> x.getBooks().add(this));
+    // }
    
 }
 
