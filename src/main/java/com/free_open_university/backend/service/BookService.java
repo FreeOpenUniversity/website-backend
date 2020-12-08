@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.Set;
 import java.util.Optional;
 
 @Service
@@ -16,19 +16,19 @@ public class BookService {
     @Autowired
     BookRepository bookDao;
 
-    public List<Book> getAllBooks() {
-        return bookDao.findAll();
+    public Set<Book> getAllBooks(int BookId) {
+        return bookDao.findAll(BookId);
     }
 
-    public List<Book> getBooksByLevel(int level) {
+    public Set<Book> getBooksByLevel(int level) {
         return bookDao.findByLevel(level);
     }
 
-    public List<Book> getBooksByCategoryId(int CategoryId) {
+    public Set<Book> getBooksByCategoryId(int CategoryId) {
         return bookDao.findByCategoryId(CategoryId);
     }
 
-    public List<Book>  getBooksByLevelAndCategoryId(int level, int CategoryId) {
+    public Set<Book>  getBooksByLevelAndCategoryId(int level, int CategoryId) {
         return bookDao.findByLevelAndCategoryId(level, CategoryId);
     }
 

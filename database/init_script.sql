@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS test;
-USE test;
+CREATE DATABASE IF NOT EXISTS flat;
+USE flat;
 
 CREATE TABLE IF NOT EXISTS User (
 	id INT NOT NULL AUTO_INCREMENT,
@@ -11,20 +11,18 @@ CREATE TABLE IF NOT EXISTS User (
 );
 
 CREATE TABLE IF NOT EXISTS Category (
-	id INT NOT NULL AUTO_INCREMENT,
+	category_id INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(255) NOT NULL,
-	book_id INT,
-	PRIMARY KEY (id)
+	PRIMARY KEY (category_id)
 );
 
 CREATE TABLE IF NOT EXISTS Book (
-	id INT NOT Null AUTO_INCREMENT,
+	book_id INT NOT Null AUTO_INCREMENT,
 	title VARCHAR(255),
 	author VARCHAR(255),
 	course_level INT,
 	link VARCHAR(255),
-	category_id INT,
-	PRIMARY KEY (id)
+	PRIMARY KEY (book_id)
 );
 
 CREATE TABLE IF NOT EXISTS BookCategory (
@@ -33,8 +31,8 @@ CREATE TABLE IF NOT EXISTS BookCategory (
 	PRIMARY KEY (book_id, category_id),
 	KEY fk_book (book_id),
 	KEY fk_category (category_id),
-	CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES Book (id),
-	CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES Category (id)
+	CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES Book (book_id),
+	CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES Category (category_id)
 );
 
 INSERT INTO User (name, email, password, intro)

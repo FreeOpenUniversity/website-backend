@@ -30,7 +30,6 @@ public class Category {
     // private Book bookList;
 
 
-    private Set<Book> books = new HashSet<Book>();
     
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable (
@@ -39,6 +38,8 @@ public class Category {
         inverseJoinColumns = @JoinColumn(name = "book_id")
         )
         
+    private Set<Book> books = new HashSet<Book>();
+    
     public int getId() { 
         return id; 
     }
@@ -55,18 +56,24 @@ public class Category {
         this.name = name;
     }
 
-    public Set<Book> getBook() {
+    public Set<Book> getBookId() {
         return books;
     }
 
-    public void setBook(Set<Book> books) {
+    public void setBookId(Set<Book> books) {
         this.books = books;
     }
+    
+    public Category(String name) {
+        this.name = name;
+    }
+    
+    // public void setBook (Book book) {
+    //     this.books.add(book);
+    // }
+
     // public void setSubCategoryList(Set<Book> books) {
     //     this.books = books;
     // }
 
-    public Category(String name) {
-        this.name = name;
-    }
 }

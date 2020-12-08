@@ -3,7 +3,7 @@ package com.free_open_university.backend.bean;
 // import javax.annotation.sql.DataSourceDefinition;
 import javax.persistence.*;
 
-import lombok.*;
+// import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,8 +14,8 @@ import java.util.Set;
 
 // import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Data
-@EqualsAndHashCode(exclude = "categories")
+// @Data
+// @EqualsAndHashCode(exclude = "categories")
 
 @Entity
 @Table(name = "Book")
@@ -46,9 +46,10 @@ public class Book {
     
     // @JsonIgnore
 
-    private Set<Category> categories = new HashSet<Category>();
     
     @ManyToMany(mappedBy = "books")
+    
+    private Set<Category> categories = new HashSet<Category>();
     
     // private Category categoryList;
 
@@ -99,15 +100,19 @@ public class Book {
     public void setCategoryId(Set<Category> categories) { 
         this.categories = categories;
     }
-    
-    // public Book(String title, Category... categories) {
-    //     this.title = title;
-    //     this.categories = Stream.of(categories).collect(Collectors.toSet());
-    //     this.categories.forEach(x -> x.getBooks().add(this));
+        
+    // public void setCategoryId(Category category) {
+    //     this.categories.add(category);
     // }
-   
+    
 }
 
+
+// public Book(String title, Category... categories) {
+//     this.title = title;
+//     this.categories = Stream.of(categories).collect(Collectors.toSet());
+//     this.categories.forEach(x -> x.getBooks().add(this));
+// }
 
 // public SubCategory getSubCategory() {
 //     return subCategory;

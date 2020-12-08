@@ -6,7 +6,7 @@ import com.free_open_university.backend.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/book")
@@ -23,7 +23,7 @@ public class BookController {
     // GET localhost:8080/book?sub_category=4&level=8
     // GET localhost:8080/book?level=6
     @GetMapping
-    public List<Book> getBookList(
+    public Set<Book> getBookId(
             @RequestParam (value = "category", required = false) Integer CategoryId,
             @RequestParam (value = "level", required = false) Integer level) {
         if(CategoryId != null && level != null){
@@ -53,7 +53,7 @@ public class BookController {
     }
 
     @PostMapping("/batch_upload")
-    public Response addBookBatch(@RequestBody List<Book> books) {
+    public Response addBookBatch(@RequestBody Set<Book> books) {
         Response response = new Response();
         for (Book book : books) {
             response = bookService.addBook(book);

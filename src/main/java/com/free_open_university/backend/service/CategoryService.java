@@ -5,7 +5,7 @@ import com.free_open_university.backend.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Set;
 
 @Service
 public class CategoryService {
@@ -13,8 +13,8 @@ public class CategoryService {
     @Autowired
     CategoryRepository categoryDao;
 
-    public List<Category> getAllCategories() {
-        return categoryDao.findAll();
+    public Set<Category> getAllCategories(int CategoryId) {
+        return categoryDao.findAll(CategoryId);
     }
 
 }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/category")
@@ -17,7 +17,7 @@ public class CategoryController {
     CategoryService categoryService;
 
     @GetMapping
-    public List<Category> getAllCategories() {
+    public Set<Category> getAllCategories() {
         return categoryService.getAllCategories();
     }
 }
