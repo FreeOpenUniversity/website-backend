@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS test;
 CREATE DATABASE IF NOT EXISTS test;
 USE test;
 
@@ -38,8 +39,8 @@ CREATE TABLE IF NOT EXISTS ImageLibrary (
                                             PRIMARY KEY (id)
 );
 
-INSERT INTO BookLibrary (title, author, course_level, link, category_id, subcategory_id)
-VALUES ( 'Economics Principle', 'James BauBB', 1, '', 1, 1);
+INSERT INTO BookLibrary (title, author, course_level, link, category_id, subcategory_id, image_id)
+VALUES ( 'Economics Principle', 'James BauBB', 1, '', 1, 1, 1);
 INSERT INTO  Category (name, image_id)
 VALUES ('cat1', 1), ('cat2', 1);
 INSERT INTO SubCategory (name, category_id, image_id)
