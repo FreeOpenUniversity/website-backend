@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Booklibrary")
+@Table(name = "BookLibrary")
 public class Book {
 
    /* @Id
@@ -26,6 +26,8 @@ public class Book {
     private int categoryId;
     @Column(name = "subcategory_id")
     private int subCategoryId;
+    @Column(name = "image_id")
+    private long imageId;
 
     public String getId() {
         return id;
@@ -73,5 +75,13 @@ public class Book {
 
     public void setSubCategoryId(int subCategoryId) {
         this.subCategoryId = subCategoryId;
+    }
+
+    public long getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(long imageId) {
+        this.imageId = imageId;
     }
 }
