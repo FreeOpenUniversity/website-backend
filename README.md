@@ -23,7 +23,7 @@
 - In another ***admin*** cmd or terminal, run the command below  
   ```mysql -u <your root username> -p```  
   ```<enter password at prompt>```  
-  ```create user 'freeopenuniversity'@'localhost';``` I skipped password    
+  ```create user 'OpenFreeUniversity'@'localhost';``` I skipped password    
   ```grant all privileges on * . * to 'freeopenuniversity'@localhost;```  
   ```exit```  
   log in with the user just created  

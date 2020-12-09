@@ -2,6 +2,15 @@ DROP DATABASE IF EXISTS test;
 CREATE DATABASE IF NOT EXISTS test;
 USE test;
 
+CREATE TABLE IF NOT EXISTS User (
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT Null,
+	password VARCHAR(50) NOT Null,
+	intro VARCHAR(1023),
+	PRIMARY KEY (id)
+);
+
 CREATE TABLE IF NOT EXISTS Category (
                                         id INT NOT NULL AUTO_INCREMENT,
                                         name VARCHAR(255) NOT NULL,
