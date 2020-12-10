@@ -1,27 +1,45 @@
 package com.free_open_university.backend.bean;
 
+// import lombok.*;
 import javax.persistence.*;
+
+// import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.HashSet; 
 
+// @Data
 @Entity
 @Table(name = "Category")
 public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id")
     private int id;
 
     @Column(name = "name")
     private String name;
     @Column(name = "image_id")
     private long imageId;
-    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<SubCategory> subCategoryList;
 
-    public int getId() { return id; }
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable (
+        name = "BookCategory",
+        joinColumns = @JoinColumn(name = "category_id"),
+        inverseJoinColumns = @JoinColumn(name = "book_id")
+        )
+    private Set<Book> books;
+    
+    public int getId() { 
+        return id; 
+    }
 
-    public void setId(int id) { this.id = id;}
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -31,12 +49,12 @@ public class Category {
         this.name = name;
     }
 
-    public Set<SubCategory> getSubCategoryList() {
-        return subCategoryList;
+    public Set<Book> getBooks() {
+        return books;
     }
 
-    public void setSubCategoryList(Set<SubCategory> subCategoryList) {
-        this.subCategoryList = subCategoryList;
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 
     public long getImageId() {
