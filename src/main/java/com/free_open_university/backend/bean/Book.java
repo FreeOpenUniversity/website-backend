@@ -45,11 +45,6 @@ public class Book {
     //     inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"))
     
     // @JsonIgnore
-
-    
-    @ManyToMany(mappedBy = "books")
-    
-    private Set<Category> categories = new HashSet<Category>();
     
     // private Category categoryList;
 
@@ -93,14 +88,7 @@ public class Book {
         this.link = link;
     }
 
-    public Set<Category> getCategoryId() { 
-        return categories; 
-    }
 
-    public void setCategoryId(Set<Category> categories) { 
-        this.categories = categories;
-    }
-        
     // public void setCategoryId(Category category) {
     //     this.categories.add(category);
     // }

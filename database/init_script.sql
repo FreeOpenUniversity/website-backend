@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS test;
 CREATE DATABASE IF NOT EXISTS test;
 USE test;
 
@@ -37,10 +38,12 @@ CREATE TABLE IF NOT EXISTS BookCategory (
 
 INSERT INTO User (name, email, password, intro)
 VALUES ('Tom', 'tom@gmail.com', 'password1', 'profile info1'), ('Jerry', 'jerry@gmail.com', 'password2', 'profile info2');
-INSERT INTO Category (name, book_id)
-VALUES ('Math', 001), ('Science', 002);
-INSERT INTO Book (title, author, course_level, link, category_id)
-VALUES ('Calculus I', 'author1', 01, 'link1', 20), ('Physics', 'author2', 02, 'link2', 21); 
+INSERT INTO Category (name)
+VALUES ('Math'), ('Science');
+INSERT INTO Book (title, author, course_level, link)
+VALUES ('Calculus I', 'author1', 01, 'link1'), ('Physics', 'author2', 02, 'link2');
+INSERT INTO BookCategory (book_id, category_id)
+VALUES (1,1),(2,2);
 
 
 -- INSERT INTO SubCategory (name, category_id)

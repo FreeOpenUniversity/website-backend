@@ -7,39 +7,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Set;
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class BookService {
 
     @Autowired
-    BookRepository bookDao;
+    BookRepository bookRepository;
 
-    public Set<Book> getAllBooks(int BookId) {
-        return bookDao.findAll(BookId);
-    }
+    public List<Book> getAllBooks() {return bookRepository.findAll(); }
 
-    public Set<Book> getBooksByLevel(int level) {
-        return bookDao.findByLevel(level);
-    }
-
-    public Set<Book> getBooksByCategoryId(int CategoryId) {
-        return bookDao.findByCategoryId(CategoryId);
-    }
-
-    public Set<Book>  getBooksByLevelAndCategoryId(int level, int CategoryId) {
-        return bookDao.findByLevelAndCategoryId(level, CategoryId);
+    public List<Book> getBooksByLevel(int level) {
+        return bookRepository.findByLevel(level);
     }
 
     public Optional<Book> getBookByTitle(String title) {
-        return bookDao.findByTitle(title);
+        return bookRepository.findByTitle(title);
     }
 
     @Transactional
     public Response addBook(Book newBook) {
         try{
-            bookDao.save(newBook);
+            bookRepository.save(newBook);
             return new Response(true, "book added");
         } catch (Exception e) {
             e.printStackTrace();

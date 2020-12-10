@@ -6,6 +6,7 @@ import com.free_open_university.backend.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -20,19 +21,13 @@ public class BookController {
         return bookService.getBookByTitle(title).get();
     }*/
 
-    // GET localhost:8080/book?sub_category=4&level=8
     // GET localhost:8080/book?level=6
     @GetMapping
-    public Set<Book> getBookId(
-            @RequestParam (value = "category", required = false) Integer CategoryId,
+    public List<Book> getBookId(
             @RequestParam (value = "level", required = false) Integer level) {
-        if(CategoryId != null && level != null){
-            return bookService.getBooksByLevelAndCategoryId(level, CategoryId);
-        } else if (CategoryId == null && level != null) {
+        if(level != null){
             return bookService.getBooksByLevel(level);
-        } else if (CategoryId != null && level == null) {
-            return bookService.getBooksByCategoryId(CategoryId);
-        } else {
+        }else {
             return bookService.getAllBooks();
         }
         

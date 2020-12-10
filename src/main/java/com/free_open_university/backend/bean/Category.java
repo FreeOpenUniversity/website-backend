@@ -5,6 +5,8 @@ import javax.persistence.*;
 
 // import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.HashSet; 
 
@@ -15,9 +17,10 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id")
     private int id;
 
-    @Column(name = "category_id")
+    @Column(name = "name")
     private String name;
 
     
@@ -37,8 +40,7 @@ public class Category {
         joinColumns = @JoinColumn(name = "category_id"),
         inverseJoinColumns = @JoinColumn(name = "book_id")
         )
-        
-    private Set<Book> books = new HashSet<Book>();
+    private List<Book> books = new ArrayList<Book>();
     
     public int getId() { 
         return id; 
@@ -56,18 +58,14 @@ public class Category {
         this.name = name;
     }
 
-    public Set<Book> getBookId() {
+    public List<Book> getBooks() {
         return books;
     }
 
-    public void setBookId(Set<Book> books) {
+    public void setBooks(List<Book> books) {
         this.books = books;
     }
-    
-    public Category(String name) {
-        this.name = name;
-    }
-    
+
     // public void setBook (Book book) {
     //     this.books.add(book);
     // }
