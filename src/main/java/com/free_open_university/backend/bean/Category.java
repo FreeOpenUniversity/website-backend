@@ -40,7 +40,7 @@ public class Category {
         joinColumns = @JoinColumn(name = "category_id"),
         inverseJoinColumns = @JoinColumn(name = "book_id")
         )
-    private List<Book> books = new ArrayList<Book>();
+    private Set<Book> books;
     
     public int getId() { 
         return id; 
@@ -58,11 +58,11 @@ public class Category {
         this.name = name;
     }
 
-    public List<Book> getBooks() {
+    public Set<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(List<Book> books) {
+    public void setBooks(Set<Book> books) {
         this.books = books;
     }
 
