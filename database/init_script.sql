@@ -49,8 +49,8 @@ CREATE TABLE IF NOT EXISTS BookCategory (
 
 INSERT INTO User (name, email, password, intro)
 VALUES ('Tom', 'tom@gmail.com', 'password1', 'profile info1'), ('Jerry', 'jerry@gmail.com', 'password2', 'profile info2');
-INSERT INTO Category (name)
-VALUES ('Math'), ('Science');
+INSERT INTO Category (name, image_id)
+VALUES ('Math', 1), ('Science', 1);
 INSERT INTO Book (title, author, course_level, link, image_id)
 VALUES ('Calculus I', 'author1', 01, 'link1', 1), ('Physics', 'author2', 02, 'link2', 1);
 INSERT INTO BookCategory (book_id, category_id)

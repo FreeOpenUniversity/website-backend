@@ -34,7 +34,6 @@ public class Book {
     private int level;
     @Column(name = "link")
     private String link;
-    private int subCategoryId;
     @Column(name = "image_id")
     private long imageId;
 
