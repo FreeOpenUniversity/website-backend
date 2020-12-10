@@ -1,8 +1,8 @@
 package com.free_open_university.backend.service;
 
 import com.free_open_university.backend.bean.Book;
-import com.free_open_university.backend.dao.BookDao;
 import com.free_open_university.backend.http.Response;
+import com.free_open_university.backend.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,32 +14,22 @@ import java.util.Optional;
 public class BookService {
 
     @Autowired
-    BookDao bookDao;
+    BookRepository bookRepository;
 
-    public List<Book> getAllBooks() {
-        return bookDao.findAll();
-    }
+    public List<Book> getAllBooks() {return bookRepository.findAll(); }
 
     public List<Book> getBooksByLevel(int level) {
-        return bookDao.findByLevel(level);
-    }
-
-    public List<Book> getBooksBySubCategoryId(int subCategoryId) {
-        return bookDao.findBySubCategoryId(subCategoryId);
-    }
-
-    public List<Book>  getBooksByLevelAndSubCategoryId(int level, int subCategorId) {
-        return bookDao.findByLevelAndSubCategoryId(level, subCategorId);
+        return bookRepository.findByLevel(level);
     }
 
     public Optional<Book> getBookByTitle(String title) {
-        return bookDao.findByTitle(title);
+        return bookRepository.findByTitle(title);
     }
 
     @Transactional
     public Response addBook(Book newBook) {
         try{
-            bookDao.save(newBook);
+            bookRepository.save(newBook);
             return new Response(true, "book added");
         } catch (Exception e) {
             e.printStackTrace();

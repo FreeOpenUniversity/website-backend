@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/book")
@@ -20,21 +21,25 @@ public class BookController {
         return bookService.getBookByTitle(title).get();
     }*/
 
-    // GET localhost:8080/book?sub_category=4&level=8
     // GET localhost:8080/book?level=6
     @GetMapping
-    public List<Book> getBookList(
-            @RequestParam (value = "sub_category", required = false) Integer subCategoryId,
+    public List<Book> getBookId(
             @RequestParam (value = "level", required = false) Integer level) {
-        if(subCategoryId != null && level != null){
-            return bookService.getBooksByLevelAndSubCategoryId(level, subCategoryId);
-        } else if (subCategoryId == null && level != null) {
+        if(level != null){
             return bookService.getBooksByLevel(level);
-        } else if (subCategoryId != null && level == null) {
-            return bookService.getBooksBySubCategoryId(subCategoryId);
-        } else {
+        }else {
             return bookService.getAllBooks();
         }
+        
+                // if(subCategoryId != null && level != null){
+        //     return bookService.getBooksByLevelAndSubCategoryId(level, subCategoryId);
+        // } else if (subCategoryId == null && level != null) {
+        //     return bookService.getBooksByLevel(level);
+        // } else if (subCategoryId != null && level == null) {
+        //     return bookService.getBooksBySubCategoryId(subCategoryId);
+        // } else {
+        //     return bookService.getAllBooks();
+        // }
     }
 
     @PostMapping
@@ -43,7 +48,7 @@ public class BookController {
     }
 
     @PostMapping("/batch_upload")
-    public Response addBookBatch(@RequestBody List<Book> books) {
+    public Response addBookBatch(@RequestBody Set<Book> books) {
         Response response = new Response();
         for (Book book : books) {
             response = bookService.addBook(book);
