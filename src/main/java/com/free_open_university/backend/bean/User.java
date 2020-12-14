@@ -8,8 +8,9 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -19,13 +20,15 @@ public class User {
     private String password;
     @Column(name = "intro")
     private String intro;
-    
 
-    public int getId() {
+    @OneToOne(mappedBy = "user")
+    private UserHistory userHistory;
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -61,4 +64,11 @@ public class User {
         this.intro = intro;
     }
 
+    public Long getUserHistory() {
+        return id;
+    }
+
+    public void setUserHistory(Long id) {
+        this.id = id;
+    }
 }
