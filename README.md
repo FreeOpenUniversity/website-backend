@@ -23,7 +23,6 @@
 - Install mysql server (GUI workbench is optional):
   remember the root username and password during installing process  
   add the "bin" folder to path
-  - 
 - Open cmd(windows) or terminal(mac) with ***admin*** access, run the command below  
   ```mysqld --console``` to start server  
 - In another ***admin*** cmd or terminal, run the command below  
@@ -37,6 +36,8 @@
   now you can create database, tables and data entries  
 - run the init_script in database folder to create tables and data
   ```source <your path to the script>```
- 
-
+- to shut it down [try](https://stackoverflow.com/a/11091462/11338233):
+    - `mysqladmin -u root -p shutdown`
+    - `sudo mysqld stop`
+    - `/usr/local/mysql/bin/mysqladmin -u root -p shutdown`
   
