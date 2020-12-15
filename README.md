@@ -14,7 +14,7 @@
 ### Get started with project
 - If you use ***IntelliJ***, open the folder and the project will be loaded automatically
 - If you use command line, in project root, run ```./mvnw spring-boot:run``` In Windows, run ```mvnw spring-boot:run``` OR ```mvn spring-boot:run```
-- Please make sure you have installed [Java](!https://java.com/en/download/) and [Apache Maven](!https://maven.apache.org/download.cgi) before running theis program locally
+- Please make sure you have installed [Java](!https://java.com/en/download/) and [Apache Maven](!https://maven.apache.org/download.cgi) before running this program locally
 - Once the program starts running, open ```http://localhost:8080/``` manually to view the data
  ### Set up database
 - Install MySQL server (GUI workbench is optional)  
