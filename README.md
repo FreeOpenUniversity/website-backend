@@ -14,7 +14,7 @@
 ### Get started with project
 - If you use IntelliJ, open the folder and the project will be loaded automatically
     - to run it, click maven>backend>plugins>spring-boot>spring-boot:run
-    ![starting at the far right under ant, click maven]("RunMVN.jpg?raw=true" "Maven")
+    ![starting at the far right under ant, click maven](RunMVN.jpg?raw=true "Maven")
 - If you use command line in project root, run ```./mvnw spring-boot:run``` OR in windows, run ```mvnw spring-boot:run```
  ### Set up database
 - Install mysql server (GUI workbench is optional)  
