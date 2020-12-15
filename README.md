@@ -17,7 +17,10 @@
     ![starting at the far right under ant, click maven](RunMVN.jpg?raw=true "Maven")
 - If you use command line in project root, run ```./mvnw spring-boot:run``` OR in windows, run ```mvnw spring-boot:run```
  ### Set up database
-- Install mysql server (GUI workbench is optional)  
+- On a Mac with homebrew:
+    - `brew install mysql`
+    - `mysql_secure_installation`
+- Install mysql server (GUI workbench is optional):
   remember the root username and password during installing process  
   add the "bin" folder to path
   - 
@@ -34,4 +37,6 @@
   now you can create database, tables and data entries  
 - run the init_script in database folder to create tables and data
   ```source <your path to the script>```
+ 
+
   
