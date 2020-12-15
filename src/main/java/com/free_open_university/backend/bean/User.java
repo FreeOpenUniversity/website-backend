@@ -1,6 +1,7 @@
 package com.free_open_university.backend.bean;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 
 @Entity
@@ -64,11 +65,11 @@ public class User {
         this.intro = intro;
     }
 
-    public Long getUserHistory() {
+    public long getUserHistory() {
         return id;
     }
 
-    public void setUserHistory(Long id) {
+    public void setUserHistory (long id) {
         this.id = id;
     }
 }

@@ -16,7 +16,7 @@ public class UserHistory {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userid", referencedColumnName = "id")
-    private int userid;
+//    private long userid;
     private User user;
 
 //    private UserHistory userHistory;
@@ -29,21 +29,29 @@ public class UserHistory {
     @Column(name = "complete")
     private DecimalFormat complete;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userid;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userid) {
-        this.userid = userid;
+    public void setUser(User user) {
+        this.user = user;
     }
+
+//    public long getUserId() {
+//        return userid;
+//    }
+//
+//    public void setUserId(long userid) {
+//        this.userid = userid;
+//    }
 
     public String getSaved() {
         return saved;

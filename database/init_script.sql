@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS UserHistory(
 	progress DECIMAL(3,2),
 	complete DECIMAL(3,2),
 	PRIMARY KEY (id),
-    FOREIGN KEY (userid) REFERENCES User(id)
+	KEY userid_fk (userid),
+    CONSTRAINT userid_fk FOREIGN KEY (userid) REFERENCES User(id)
 );
 
 CREATE TABLE IF NOT EXISTS Category (
