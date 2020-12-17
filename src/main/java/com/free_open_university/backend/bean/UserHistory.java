@@ -3,19 +3,19 @@ package com.free_open_university.backend.bean;
 import java.io.Serializable;
 import java.text.DecimalFormat;
 import javax.persistence.*;
-
+import java.io.Serializable;
 
 @Entity
 @Table(name = "UserHistory")
-public class UserHistory {
+public class UserHistory implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "userid", referencedColumnName = "id")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "userid", referencedColumnName = "id", nullable = false)
 //    private long userid;
     private User user;
 
