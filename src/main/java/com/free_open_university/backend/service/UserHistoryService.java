@@ -5,6 +5,7 @@ import com.free_open_university.backend.dao.UserHistoryDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Optional;
@@ -21,8 +22,8 @@ public class UserHistoryService {
 
     public Optional<UserHistory> getUserHistoryBySaved(String saved) {return userHistoryDao.findBySaved(saved);}
 
-    public List<UserHistory> getUserHistoryByProgress(DecimalFormat progress) {return userHistoryDao.findByProgress(progress); }
+    public List<UserHistory> getUserHistoryByProgress(BigDecimal progress) {return userHistoryDao.findByProgress(progress); }
 
-    public List<UserHistory> getUserHistoryByComplete(DecimalFormat complete) {return userHistoryDao.findByComplete(complete); }
+    public List<UserHistory> getUserHistoryByComplete(BigDecimal complete) {return userHistoryDao.findByComplete(complete); }
 
 }
