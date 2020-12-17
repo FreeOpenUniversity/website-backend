@@ -1,17 +1,17 @@
 package com.free_open_university.backend.bean;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.persistence.*;
 
 @Entity
 @Table(name = "User")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
 
     @Column(name = "name")
     private String name;
@@ -23,13 +23,14 @@ public class User {
     private String intro;
 
     @OneToOne(mappedBy = "user")
+    @JsonIgnore
     private UserHistory userHistory;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -49,12 +50,12 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() { 
-        return password; 
+    public String getPassword() {
+        return password;
     }
 
     public void setPassword(String password) {
-        this.password = password; 
+        this.password = password;
     }
 
     public String getIntro() {
@@ -65,11 +66,11 @@ public class User {
         this.intro = intro;
     }
 
-    public long getUserHistory() {
-        return id;
+    public UserHistory getUserHistory() {
+        return userHistory;
     }
 
-    public void setUserHistory (long id) {
-        this.id = id;
+    public void setUserHistory(UserHistory userHistory) {
+        this.userHistory = userHistory;
     }
 }

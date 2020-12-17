@@ -58,7 +58,6 @@ CREATE TABLE IF NOT EXISTS BookCategory (
 );
 
 
---SELECT User.id, User.name, User.email, UserHistory.progress FROM User INNER JOIN UserHistory ON User.id=UserHistory.userid;
 
 INSERT INTO User (name, email, password, intro)
 VALUES ('Tom', 'tom@gmail.com', 'password1', 'profile info1'), ('Jerry', 'jerry@gmail.com', 'password2', 'profile info2');

@@ -1,7 +1,7 @@
 package com.free_open_university.backend.bean;
 
-import java.io.Serializable;
-import java.text.DecimalFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.math.BigDecimal;
 import javax.persistence.*;
 
 
@@ -10,30 +10,27 @@ import javax.persistence.*;
 public class UserHistory {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userid", referencedColumnName = "id")
-//    private long userid;
+    @JsonIgnore
     private User user;
-
-//    private UserHistory userHistory;
-
 
     @Column(name = "saved")
     private String saved;
     @Column(name = "progress")
-    private DecimalFormat progress;
+    private BigDecimal progress;
     @Column(name = "complete")
-    private DecimalFormat complete;
+    private BigDecimal complete;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -45,36 +42,27 @@ public class UserHistory {
         this.user = user;
     }
 
-//    public long getUserId() {
-//        return userid;
-//    }
-//
-//    public void setUserId(long userid) {
-//        this.userid = userid;
-//    }
-
     public String getSaved() {
         return saved;
     }
 
-    public void setEmail(String saved) {
+    public void setSaved(String saved) {
         this.saved = saved;
     }
 
-    public DecimalFormat getProgress() {
+    public BigDecimal getProgress() {
         return progress;
     }
 
-    public void setProgress(DecimalFormat progress) {
+    public void setProgress(BigDecimal progress) {
         this.progress = progress;
     }
 
-    public DecimalFormat getComplete() {
+    public BigDecimal getComplete() {
         return complete;
     }
 
-    public void setComplete(DecimalFormat complete) {
+    public void setComplete(BigDecimal complete) {
         this.complete = complete;
     }
-
 }
