@@ -11,20 +11,30 @@ CREATE TABLE IF NOT EXISTS User (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS Category (
-                                        category_id INT NOT NULL AUTO_INCREMENT,
-                                        name VARCHAR(255) NOT NULL,
-                                        image_id long,
-                                        PRIMARY KEY (category_id)
+CREATE TABLE IF NOT EXISTS UserHistory(
+    id INT NOT NULL AUTO_INCREMENT,
+	userid INT,
+    saved VARCHAR(255),
+	progress DECIMAL(3,2),
+	complete DECIMAL(3,2),
+	PRIMARY KEY (id),
+	KEY userid_fk (userid),
+    CONSTRAINT userid_fk FOREIGN KEY (userid) REFERENCES User(id)
 );
 
+CREATE TABLE IF NOT EXISTS Category (
+	category_id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255) NOT NULL,
+	image_id long,
+	PRIMARY KEY (category_id)
+);
 
 CREATE TABLE IF NOT EXISTS ImageLibrary (
-                                            id INT NOT null AUTO_INCREMENT,
-                                            filename VARCHAR(128) NOT NULL,
-                                            filetype VARCHAR(28) NOT NULL,
-                                            imagedata blob NOT NULL,
-                                            PRIMARY KEY (id)
+	id INT NOT null AUTO_INCREMENT,
+	filename VARCHAR(128) NOT NULL,
+	filetype VARCHAR(28) NOT NULL,
+	imagedata blob NOT NULL,
+	PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS Book (
@@ -47,8 +57,12 @@ CREATE TABLE IF NOT EXISTS BookCategory (
 	CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES Category (category_id)
 );
 
+
+
 INSERT INTO User (name, email, password, intro)
 VALUES ('Tom', 'tom@gmail.com', 'password1', 'profile info1'), ('Jerry', 'jerry@gmail.com', 'password2', 'profile info2');
+INSERT INTO UserHistory (userid, saved, progress, complete)
+VALUES (1, 'Calculus I', 0.35, 1.00), (2, 'Physics I', 0.45, 1.00);
 INSERT INTO Category (name, image_id)
 VALUES ('Math', 1), ('Science', 1);
 INSERT INTO Book (title, author, course_level, link, image_id)
