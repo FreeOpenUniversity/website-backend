@@ -3,11 +3,11 @@ package com.free_open_university.backend.bean;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.math.BigDecimal;
 import javax.persistence.*;
-
+import java.io.Serializable;
 
 @Entity
 @Table(name = "UserHistory")
-public class UserHistory {
+public class UserHistory{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
