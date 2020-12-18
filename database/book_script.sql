@@ -1,0 +1,22 @@
+INSERT INTO Book (title, author, course_level, link, image_id)
+VALUES ("ARA 012 Arabic Morphology- Main Text", 'author1', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20012%20Arabic%20Morphology-%20Main%20Text.pdf", 1),
+("ARA 014 Arabic Literature II", 'author2', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20014%20Arabic%20Literature%20II.pdf", 1),
+("ARA 055", 'author2', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20055.pdf", 1),
+("ARA 085 Arabic Literature II", 'author2', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20085%20Arabic%20Literature%20II.pdf", 1),
+("ARA 086 Arabic Morphology- Main Text", 'author3', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20086%20Arabic%20Morphology-%20Main%20Text.pdf", 1),
+("ARA 183", 'author4', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20183.pdf", 1),
+("ARA011 Arabic Grammar 1", 'author4', 04, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA011%20Arabic%20Grammar%201.pdf", 1),
+("ARA016 Arabic Reader", 'author5', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA016%20Arabic%20Reader.pdf", 1),
+("ARA051 Arabic Grammar 1 Main Course", 'author6', 03, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA051%20Arabic%20Grammar%201%20Main%20Course.pdf", 1),
+("ARA052 Arabic Reader 1  MAIN 30-05-10", 'author7', 03, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA052%20Arabic%20Reader%201%20%20MAIN%2030-05-10.pdf", 1),
+("ARA064", 'author8', 04, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA064.pdf", 1),
+("ARA182 Arabic Reading 1 31-o5-10", 'author8', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA182%20Arabic%20Reading%201%2031-o5-10.pdf", 1),
+("ARA184 Rhetoric I Bayan", 'author9', 03, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA184%20Rhetoric%20I%20Bayan.pdf", 1),
+("BIO 001 Access Biology.PDF", 'author10', 04, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/BIO%20001%20Access%20Biology.PDF", 1),
+("CAI 001 -Intro to Qur'an-Main.", 'author11', 05, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/CAI%20001%20-Intro%20to%20Qur'an-Main..pdf", 1),
+("CFR 011 MAIN", 'author12', 03, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/CFR%20011%20MAIN.pdf", 1),
+("CFR 012", 'author13', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/CFR%20012.pdf", 1),
+("CHM 001 Access Chemistry.PDF", 'author14', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/CHM%20001%20Access%20Chemistry.PDF", 1),
+("CORRECTD INR 111", 'author14', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/CORRECTD%20INR%20111.pdf", 1),
+("CORRECTED INR 112- MAIN", 'author14', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/CORRECTED%20INR%20112-%20MAIN.pdf", 1)
+;
