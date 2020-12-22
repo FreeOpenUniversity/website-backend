@@ -64,28 +64,28 @@ VALUES ('Tom', 'tom@gmail.com', 'password1', 'profile info1'), ('Jerry', 'jerry@
 INSERT INTO UserHistory (userid, saved, progress, complete)
 VALUES (1, 'Calculus I', 0.35, 1.00), (2, 'Physics I', 0.45, 1.00);
 INSERT INTO Category (name, image_id)
-VALUES ('Math', 1), ('Science', 1);
+VALUES ('Math', 1), ('Science', 1), ('nouBusLower2', 1);
 INSERT INTO Book (title, author, course_level, link, image_id)
-VALUES ("ARA 012 Arabic Morphology- Main Text", 'author1', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20012%20Arabic%20Morphology-%20Main%20Text.pdf", 1),
-("ARA 014 Arabic Literature II", 'author2', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20014%20Arabic%20Literature%20II.pdf", 1),
-("ARA 055", 'author2', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20055.pdf", 1),
-("ARA 085 Arabic Literature II", 'author2', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20085%20Arabic%20Literature%20II.pdf", 1),
-("ARA 086 Arabic Morphology- Main Text", 'author3', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20086%20Arabic%20Morphology-%20Main%20Text.pdf", 1),
-("ARA 183", 'author4', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20183.pdf", 1),
-("ARA011 Arabic Grammar 1", 'author4', 04, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA011%20Arabic%20Grammar%201.pdf", 1),
-("ARA016 Arabic Reader", 'author5', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA016%20Arabic%20Reader.pdf", 1),
-("ARA051 Arabic Grammar 1 Main Course", 'author6', 03, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA051%20Arabic%20Grammar%201%20Main%20Course.pdf", 1),
-("ARA052 Arabic Reader 1  MAIN 30-05-10", 'author7', 03, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA052%20Arabic%20Reader%201%20%20MAIN%2030-05-10.pdf", 1),
-("ARA064", 'author8', 04, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA064.pdf", 1),
-("ARA182 Arabic Reading 1 31-o5-10", 'author8', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA182%20Arabic%20Reading%201%2031-o5-10.pdf", 1),
-("ARA184 Rhetoric I Bayan", 'author9', 03, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA184%20Rhetoric%20I%20Bayan.pdf", 1),
-("BIO 001 Access Biology.PDF", 'author10', 04, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/BIO%20001%20Access%20Biology.PDF", 1),
-("CAI 001 -Intro to Qur'an-Main.", 'author11', 05, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/CAI%20001%20-Intro%20to%20Qur'an-Main..pdf", 1),
-("CFR 011 MAIN", 'author12', 03, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/CFR%20011%20MAIN.pdf", 1),
-("CFR 012", 'author13', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/CFR%20012.pdf", 1),
-("CHM 001 Access Chemistry.PDF", 'author14', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/CHM%20001%20Access%20Chemistry.PDF", 1),
-("CORRECTD INR 111", 'author14', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/CORRECTD%20INR%20111.pdf", 1),
-("CORRECTED INR 112- MAIN", 'author14', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/CORRECTED%20INR%20112-%20MAIN.pdf", 1);
+VALUES ("MBF 841 EMERGING TECHNOLOGIES IN INFORMATION TECHNOLOGY", 'author1', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nouBusUpper3/MBF%20841%20EMERGING%20TECHNOLOGIES%20IN%20INFORMATION%20TECHNOLOGY.pdf", 1),
+("MBF 844 COMPUTER NETWORK AND INTERNET", 'author2', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nouBusUpper3/MBF%20844%20COMPUTER%20NETWORK%20AND%20INTERNET.pdf", 1),
+("BIO 101 Genreal Biology I", 'author2', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nouSST100/BIO%20101%20Genreal%20Biology%20I.pdf", 1),
+("BIO 102 BIOLOGY OF ANIMALS", 'author2', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nouSST100/BIO%20102%20BIOLOGY%20OF%20ANIMALS.pdf", 1),
+("EDU 421 FUNDAMENTALS OF GUIDANCE AND COUNSELING", 'author3', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nouALLED2/EDU%20421%20FUNDAMENTALS%20OF%20GUIDANCE%20AND%20COUNSELING.pdf", 1),
+("EDU 426 SPECIAL EDUCATION", 'author4', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nouALLED2/EDU%20426%20SPECIAL%20EDUCATION.pdf", 1),
+("BED 112", 'author4', 04, "https://github.com/FreeOpenU/tbooks/raw/master/nouALLED1/BED%20112.pdf", 1),
+("BED 113", 'author5', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nouALLED1/BED%20113.pdf", 1),
+("CIT 465", 'author6', 03, "https://github.com/FreeOpenU/tbooks/raw/master/nouSST401/CIT%20465.pdf", 1),
+("CIT 467 VISUAL PROGRAMMING LANGUAGE 2", 'author7', 03, "https://github.com/FreeOpenU/tbooks/raw/master/nouSST401/CIT%20467%20VISUAL%20PROGRAMMING%20LANGUAGE%202.pdf", 1),
+("CIT 811", 'author8', 04, "https://github.com/FreeOpenU/tbooks/raw/master/nouSST800/CIT%20811.pdf", 1),
+("CIT 831", 'author8', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nouSST800/CIT%20831.pdf", 1),
+("ARA 012 Arabic Morphology- Main Text", 'author9', 03, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20012%20Arabic%20Morphology-%20Main%20Text.pdf", 1),
+("ARA 014 Arabic Literature II", 'author10', 04, "https://github.com/FreeOpenU/tbooks/raw/master/nou100/ARA%20014%20Arabic%20Literature%20II.pdf", 1),
+("ACP 301 ARABLE CROP PRODUCTION", 'author11', 05, "https://github.com/FreeOpenU/tbooks/raw/master/nouSST300/ACP%20301%20ARABLE%20CROP%20PRODUCTION.pdf", 1),
+("ACP 303 permanent crops production", 'author12', 03, "https://github.com/FreeOpenU/tbooks/raw/master/nouSST300/ACP%20303%20permanent%20crops%20production.pdf", 1),
+("ARA 383 ENGLISH-ARABIC TRANSLATION", 'author13', 02, "https://github.com/FreeOpenU/tbooks/raw/master/nou300/ARA%20383%20ENGLISH-ARABIC%20TRANSLATION.pdf", 1),
+("ARA381 Arabic Morphology C. Material%5B1%5D", 'author14', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou300/ARA381%20Arabic%20Morphology%20C.%20Material%5B1%5D.pdf", 1),
+("CSS 742", 'author14', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou700/CSS%20742.pdf", 1),
+("CSS 743", 'author14', 01, "https://github.com/FreeOpenU/tbooks/raw/master/nou700/CSS%20743.pdf", 1);
 INSERT INTO BookCategory (book_id, category_id)
 VALUES (1,1),(2,2);
 INSERT INTO ImageLibrary (filename, filetype, imagedata)
