@@ -34,7 +34,7 @@
 - Run the commands below: (**_DO NOT forget the punctuation marks like " ; "_**)  
   `mysql -u <your root username> -p`  
   `<enter password at prompt>`  
-  `create user 'OpenFreeUniversity'@'localhost';` (_I skipped password, so DO NOT create the user with password here_)  
+  `create user 'freeopenuniversity'@'localhost';` (_I skipped password, so DO NOT create the user with password here_)  
   `grant all privileges on * . * to 'freeopenuniversity'@localhost;`  
   `exit`  
   Now you can log in with the user just created  
