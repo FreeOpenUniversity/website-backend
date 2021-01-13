@@ -1,24 +1,40 @@
 package com.free_open_university.backend.controller;
 
 import com.free_open_university.backend.bean.Category;
+import com.free_open_university.backend.repositories.CategoryRepository;
 import com.free_open_university.backend.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/category")
+//@RequestMapping("/category")
 public class CategoryController {
 
     @Autowired
-    CategoryService categoryService;
+//    CategoryService categoryService;
+    CategoryRepository categoryRepository;
 
-    @GetMapping
-    public List<Category> getAllCategories() {
-        return categoryService.getAllCategories();
+//    @GetMapping
+//    public List<Category> getAllCategories() {
+//        return categoryService.getAllCategories();
+//    }
+
+    @GetMapping("/category")
+    public List<Category> getAllCategories()
+    {
+        return categoryRepository.findAll();
+    }
+
+    @GetMapping("/category/{id}")
+    public Optional<Category> getCategoryById(@PathVariable(value="id") Long id)
+    {
+        return categoryRepository.findById(id);
     }
 }
