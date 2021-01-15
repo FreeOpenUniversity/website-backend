@@ -1,6 +1,9 @@
 package com.free_open_university.backend.controller;
 
+import com.free_open_university.backend.bean.Book;
+import com.free_open_university.backend.bean.BookCategory;
 import com.free_open_university.backend.bean.Category;
+import com.free_open_university.backend.repositories.BookRepository;
 import com.free_open_university.backend.repositories.CategoryRepository;
 import com.free_open_university.backend.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +23,7 @@ public class CategoryController {
     @Autowired
 //    CategoryService categoryService;
     CategoryRepository categoryRepository;
+    BookRepository bookRepository;
 
 //    @GetMapping
 //    public List<Category> getAllCategories() {
@@ -37,4 +41,16 @@ public class CategoryController {
     {
         return categoryRepository.findById(id);
     }
+
+//    @GetMapping("/category/{id}/books")
+//    public List<Category> getBooksbyCategory(@PathVariable(value="books") Long books)
+//    {
+//        return categoryRepository.findBooksByCategory(books);
+//    }
+
+//    @GetMapping("/category/{id}/books")
+//    public List<BookCategory> getBooksbyCategory(@PathVariable(value="books") Long book_id)
+//    {
+//        return categoryRepository.findBooksByCategory(book_id);
+//    }
 }

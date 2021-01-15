@@ -23,7 +23,7 @@ public class Category {
     @Column(name = "name")
     private String name;
     @Column(name = "image_id")
-    private long imageId;
+    private Long imageId;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable (
@@ -49,19 +49,19 @@ public class Category {
         this.name = name;
     }
 
-    public Set<Book> getBooks() {
-        return books;
-    }
+//    public Set<Book> getBooks() {
+//        return books;
+//    }
+//
+//    public void setBooks(Set<Book> books) {
+//        this.books = books;
+//    }
 
-    public void setBooks(Set<Book> books) {
-        this.books = books;
-    }
-
-    public long getImageId() {
+    public Long getImageId() {
         return imageId;
     }
 
-    public void setImageId(long imageId) {
+    public void setImageId(Long imageId) {
         this.imageId = imageId;
     }
 }
