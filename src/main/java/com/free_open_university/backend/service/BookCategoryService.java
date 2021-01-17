@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookCategoryService {
@@ -14,9 +15,10 @@ public class BookCategoryService {
     @Autowired
     BookCategoryRepository bookCategoryRepository;
 
-    public List<BookCategory> getAllBookCategories() {
-        return bookCategoryRepository.findAll();
-    }
+//    public List<BookCategory> getAllBookCategories() {
+//        return bookCategoryRepository.findAll();
+//    }
 
-//    public List<BookCategory> getBooksbyCategory(Long category_id) { return bookCategoryRepository.findBooksByCategory(category_id); }
+//    public List<BookCategory> getBooksbyCategoryId(Long category_id) { return bookCategoryRepository.findAllById(category_id); }
+
 }
