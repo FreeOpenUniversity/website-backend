@@ -5,6 +5,7 @@ import com.free_open_university.backend.http.Response;
 import com.free_open_university.backend.repositories.BookRepository;
 import com.free_open_university.backend.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -49,10 +50,20 @@ public class BookController {
 //        return bookService.addBook(newBook);
 //    }
 
-    @PostMapping("/upload")
-    public Book addBook(@RequestBody Book book)
+
+    @DeleteMapping("/deleteBook/{book_id}")
+    private void deleteBook(@PathVariable("book_id") Long id)
     {
-        return bookRepository.save(book);
+        bookService.delete(id);
+    }
+
+    @PostMapping("/addBook")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    private Long addBook(@RequestBody Book book)
+
+    {
+        bookService.saveOrUpdate(book);
+        return book.getId();
     }
 
     @PostMapping("/batch_upload")
@@ -66,5 +77,14 @@ public class BookController {
         }
         return new Response(true,200,"books added");
     }
+
+    @PutMapping("/updateBook")
+    private Book updateBook(@RequestBody Book book)
+    {
+        bookService.saveOrUpdate(book);
+        return book;
+    }
+
+
 
 }

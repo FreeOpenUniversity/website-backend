@@ -26,6 +26,13 @@ public class BookService {
         return bookRepository.findByTitle(title);
     }
 
+    public void saveOrUpdate(Book book)
+    {
+        bookRepository.save(book);
+    }
+
+    public void delete(Long id) { bookRepository.deleteById(id); }
+
     @Transactional
     public Response addBook(Book newBook) {
         try{
