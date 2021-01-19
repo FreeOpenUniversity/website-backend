@@ -2,6 +2,7 @@ package com.free_open_university.backend.controller;
 
 import com.free_open_university.backend.bean.Book;
 import com.free_open_university.backend.http.Response;
+import com.free_open_university.backend.repositories.BookRepository;
 import com.free_open_university.backend.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ public class BookController {
 
     @Autowired
     BookService bookService;
+    BookRepository bookRepository;
 
 /*    @GetMapping // todo: need another path
     public Book getBookByTitle(@RequestParam(value = "title") String title) {
@@ -42,9 +44,15 @@ public class BookController {
         // }
     }
 
-    @PostMapping
-    public Response addBook(@RequestBody  Book newBook) {
-        return bookService.addBook(newBook);
+//    @PostMapping
+//    public Response addBook(@RequestBody  Book newBook) {
+//        return bookService.addBook(newBook);
+//    }
+
+    @PostMapping("/upload")
+    public Book addBook(@RequestBody Book book)
+    {
+        return bookRepository.save(book);
     }
 
     @PostMapping("/batch_upload")

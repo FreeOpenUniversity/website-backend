@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.Optional;
 
-public interface BookRepository extends JpaRepository<Book, Integer> {
+public interface BookRepository extends JpaRepository<Book, Long> {
 
     Optional<Book> findByTitle(String title);
 
