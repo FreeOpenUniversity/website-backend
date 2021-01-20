@@ -31,16 +31,21 @@ public class BookService {
         bookRepository.save(book);
     }
 
+    public List<Book> saveAllBook(List<Book> bookList) { return  bookRepository.saveAll(bookList); }
+
     public void delete(Long id) { bookRepository.deleteById(id); }
 
-    @Transactional
-    public Response addBook(Book newBook) {
-        try{
-            bookRepository.save(newBook);
-            return new Response(true, "book added");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new Response(false, "book not added");
-        }
+    public void deleteInBatch(List<Book> bookList) { bookRepository.deleteInBatch(bookList);
     }
+
+//    @Transactional
+//    public Response addBook(Book newBook) {
+//        try{
+//            bookRepository.save(newBook);
+//            return new Response(true, "book added");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return new Response(false, "book not added");
+//        }
+//    }
 }
