@@ -10,11 +10,20 @@ public class BookCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "bookcategory_id")
+    private Long bookcategory_id;
     @Column(name = "category_id")
     private Long category_id;
     @Column(name = "book_id")
     private Long book_id;
 
+    public Long getBookCategoryId() {
+        return bookcategory_id;
+    }
+
+    public void setBookCategoryId(Long bookcategory_id) {
+        this.bookcategory_id = bookcategory_id;
+    }
 
     public Long getCategoryId() {
         return category_id;
@@ -32,8 +41,8 @@ public class BookCategory {
         this.book_id = book_id;
     }
 
-    @Override
-    public String toString() {
-        return "BookCategory [category_id=" + category_id + ", book_id=" + book_id + "]";
-    }
+//    @Override
+//    public String toString() {
+//        return "BookCategory [category_id=" + category_id + ", book_id=" + book_id + "]";
+//    }
 }
