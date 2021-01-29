@@ -16,13 +16,13 @@ public class BookCategoryService {
     @Autowired
     BookCategoryRepository bookCategoryRepository;
 
-    public List<BookCategory> getAllBookCategories() {
-        return bookCategoryRepository.findAll();
-    }
+//    public List<BookCategory> getAllBookCategories() {
+//        return bookCategoryRepository.findAll();
+//    }
 
-    public List<BookCategory> getBooksByCategories(Long category_id) {
-        return bookCategoryRepository.findbyCategory(category_id);
-    }
+//    public List<BookCategory> getBooksByCategories(Long category_id) {
+//        return bookCategoryRepository.findbyCategory(category_id);
+//    }
 
 //    public List<BookCategory> getBooksbyCategoryId(Long category_id) { return bookCategoryRepository.findAllById(category_id); }
 

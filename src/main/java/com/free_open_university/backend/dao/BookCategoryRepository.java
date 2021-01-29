@@ -21,7 +21,7 @@ public interface BookCategoryRepository extends JpaRepository<BookCategory, Long
 //
 //    SELECT BookCategory.category_id, BookCategory.book_id, Book.title FROM BookCategory INNER JOIN Book ON BookCategory.book_id=Book.book_id;
 
-    List<BookCategory> findbyCategory(Long category_id);
+//    List<BookCategory> findbyCategory(Long category_id);
 
 
 }

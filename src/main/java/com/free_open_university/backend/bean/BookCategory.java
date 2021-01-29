@@ -12,6 +12,7 @@ public class BookCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "bookcategory_id")
     private Long bookcategory_id;
+
     @Column(name = "category_id")
     private Long category_id;
     @Column(name = "book_id")
