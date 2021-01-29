@@ -2,8 +2,10 @@ package com.free_open_university.backend.controller;
 
 import com.free_open_university.backend.bean.Book;
 import com.free_open_university.backend.http.Response;
+import com.free_open_university.backend.repositories.BookRepository;
 import com.free_open_university.backend.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +17,7 @@ public class BookController {
 
     @Autowired
     BookService bookService;
+    BookRepository bookRepository;
 
 /*    @GetMapping // todo: need another path
     public Book getBookByTitle(@RequestParam(value = "title") String title) {
@@ -42,21 +45,51 @@ public class BookController {
         // }
     }
 
-    @PostMapping
-    public Response addBook(@RequestBody  Book newBook) {
-        return bookService.addBook(newBook);
+
+    @PostMapping("/addBook")
+//    @ResponseStatus(HttpStatus.ACCEPTED)
+    private Long addBook(@RequestBody Book book)
+
+    {
+        bookService.saveOrUpdate(book);
+        return book.getId();
     }
 
-    @PostMapping("/batch_upload")
-    public Response addBookBatch(@RequestBody Set<Book> books) {
-        Response response = new Response();
-        for (Book book : books) {
-            response = bookService.addBook(book);
-            if(!response.isSuccess()) {
-                return response;
-            }
-        }
-        return new Response(true,200,"books added");
+    @PostMapping("/addBooks")
+    public List<Book> saveAllBook(@RequestBody List<Book> bookList) {
+        return (List<Book>) bookService.saveAllBook(bookList);
+    }
+
+    @DeleteMapping("/deleteBook/{book_id}")
+    private void deleteBook(@PathVariable("book_id") Long id)
+    {
+        bookService.delete(id);
+    }
+
+//    @DeleteMapping("/deleteBooks")
+//    public String deleteInBatch(@RequestBody List<Book> bookList) {
+//        bookService.deleteInBatch(bookList);
+//        return "All Students deleted successfully";
+//    }
+
+    @PutMapping("/updateBook")
+    private Book updateBook(@RequestBody Book book)
+    {
+        bookService.saveOrUpdate(book);
+        return book;
     }
 
 }
+
+
+//    @PostMapping("/batch_upload")
+//    public Response addBookBatch(@RequestBody Set<Book> books) {
+//        Response response = new Response();
+//        for (Book book : books) {
+//            response = bookService.addBook(book);
+//            if(!response.isSuccess()) {
+//                return response;
+//            }
+//        }
+//        return new Response(true,200,"books added");
+//    }
