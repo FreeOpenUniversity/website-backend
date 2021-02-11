@@ -48,9 +48,10 @@ CREATE TABLE IF NOT EXISTS Book (
 );
 
 CREATE TABLE IF NOT EXISTS BookCategory (
+    bookcategory_id INT NOT Null AUTO_INCREMENT,
 	book_id INT NOT NULL,
 	category_id INT NOT NULL,
-	PRIMARY KEY (book_id, category_id),
+	PRIMARY KEY (bookcategory_id, book_id, category_id),
 	KEY fk_book (book_id),
 	KEY fk_category (category_id),
 	CONSTRAINT fk_book FOREIGN KEY (book_id) REFERENCES Book (book_id),
