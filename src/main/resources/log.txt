@@ -22,3 +22,7 @@ hello.sh has been executed by java
 testing again
 Hello World
 7
+hello.sh has been executed by java
+testing again
+Hello World
+7
