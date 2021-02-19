@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
 
-public class ExeuteShellProcessBuilder {
+public class ExecuteShellProcessBuilder {
 
     public static void main(String[] args) {
         String[] cmd = new String[] {"src/main/resources/hello.sh"};

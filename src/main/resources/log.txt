@@ -1,28 +1,3 @@
-hello.sh has been executed by java
-testing again
-src/main/resources/hello.sh: line 5: python: command not found
-hello.sh has been executed by java
-testing again
-src/main/resources/hello.sh: line 5: python: command not found
-hello.sh has been executed by java
-testing again
-src/main/resources/hello.sh: line 5: python: command not found
-hello.sh has been executed by java
-testing again
-src/main/resources/hello.sh: line 5: python: command not found
-hello.sh has been executed by java
-testing again
-Hello World
-7
-hello.sh has been executed by java
-testing again
-Hello World
-7
-hello.sh has been executed by java
-testing again
-Hello World
-7
-hello.sh has been executed by java
-testing again
-Hello World
-7
+All arguments (without script name): ['Taniya', 'Hello', 'Testing', 'World']
+
+
