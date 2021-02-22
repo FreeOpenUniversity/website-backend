@@ -4,4 +4,4 @@
 #echo "testing again"
 
 
-python3 src/main/resources/hello.py Taniya Hello Testing World
+python3 src/main/resources/hello.py Hello World Testing

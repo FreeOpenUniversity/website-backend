@@ -30,5 +30,3 @@ public class ExecuteShellProcessBuilder {
         }
     }
 }
-//"src/main/resources/hello.py", "src/main/resources/log.txt"
-//"/home/taniya/Projects/external/openu/openu_back/website-backend/src/main/resources/hello.py"

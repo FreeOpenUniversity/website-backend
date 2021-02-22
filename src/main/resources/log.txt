@@ -1,3 +1,8 @@
-All arguments (without script name): ['Taniya', 'Hello', 'Testing', 'World']
+All arguments (without script name): ['Hello', 'World', 'Testing']
+
+All arguments (without script name): ['Hello', 'World', 'Testing']
+
+
+All arguments (without script name): ['Hello', 'World', 'Testing']
 
 
